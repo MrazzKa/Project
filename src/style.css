@@ -198,6 +198,38 @@ footer a {
     display: none;
 }
 
+.navbar ul .work {
+    position: relative; /* Set the position to relative to enable absolute positioning of its child elements */
+    display: flex; /* Use flexbox for layout */
+    z-index: 10; /* Set stacking order */
+}
+
+.navbar ul .work ul {
+    position: absolute; /* Position the dropdown menu absolutely relative to its nearest positioned ancestor */
+    flex-direction: column; /* Arrange children in a column */
+    left: 0; /* Align the left edge of the dropdown with the parent */
+    top: 100%; /* Position the top of the dropdown just below the parent */
+    width: 100px; /* Set a fixed width for the dropdown */
+    display: none; /* Initially hide the dropdown */
+    padding: 0; /* Remove default padding */
+    z-index: 20; /* Set a higher stacking order for the dropdown */
+}
+
+.navbar ul .work ul li {
+    z-index: 20; /* Ensure list items have the same stacking order as the parent */
+    background-color: #7cc6e5; /* Set background color */
+    margin-bottom: 2px; /* Add space between items */
+}
+
+.navbar ul .work:hover ul {
+    display: block; /* Show the dropdown when hovering over the parent */
+}
+
+.navbar ul .work ul li:hover {
+    background-color: white; /* Change background color on hover */
+    border-radius: 0; /* Remove border radius */
+}
+
 @media (max-width: 700px) {
     /* При ширине экрана до 700px */
     
@@ -348,7 +380,7 @@ footer a {
     transform: translateX(0); /* Ensure it moves into view */
     left: 77%; /* Ensure the left is correctly set */
     z-index: 1000; /* Increase z-index to ensure it's on top */
-    transition: 0.7s ease-in-out; /* Smooth transition effect */
+    transition: 0.0s ease-in-out; /* Smooth transition effect */
     display: block; /* Ensure it is displayed */
     visibility: visible; /* Ensure visibility */
 }
@@ -367,6 +399,38 @@ footer a {
 /* Стили для третьей полоски бургер-меню при открытом состоянии */
 .navbar.open .burger span:nth-child(3) {
     transform: translateY(0) rotate(-45deg); /* Поворачивает третью полоску на -45 градусов и возвращает в исходное положение по вертикали */
+}
+
+.navbar ul .work ul {
+    position: absolute; /* Position the dropdown menu absolutely relative to its nearest positioned ancestor */
+    flex-direction: column; /* Arrange children in a column */
+    left: 65px; /* Offset the dropdown 10px from the left of the parent */
+    top: 10; /* Align the top of the dropdown with the top of the parent */
+    width: 100px; /* Set a fixed width for the dropdown */
+    display: none; /* Initially hide the dropdown */
+    padding: 0; /* Remove default padding */
+    z-index: 20; /* Set a higher stacking order for the dropdown */
+}
+
+.navbar ul .work ul li {
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 10px; /* Add bottom margin */
+    background-color: unset; /* Remove default background color */
+    font-size: 1.2rem; /* Increase font size */
+    margin-left: 10px; /* Offset the list item 10px from the left */
+    color: black; /* Set text color to black */
+}
+
+.navbar ul .work ul li:hover {
+    background-color: black; /* Change background color to black on hover */
+}
+
+.navbar ul .work ul li:hover a:hover {
+    color: white; /* Change text color to white when hovering over the link */
+}
+
+.navbar ul .work:hover ul li a {
+    color: black; /* Set text color to black when hovering over the parent */
 }
 
 @media (min-width: 700px) and (max-width: 900px) {
