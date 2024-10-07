@@ -194,7 +194,161 @@ footer a {
     margin-right: 10px; /* Отступ справа у ссылок в футере */
 }
 
+.burger{
+    display: none;
+}
 
+.navbar ul .work {
+    position: relative; /* Set the position to relative to enable absolute positioning of its child elements */
+    display: flex; /* Use flexbox for layout */
+    z-index: 10; /* Set stacking order */
+}
+
+.navbar ul .work ul {
+    position: absolute; /* Position the dropdown menu absolutely relative to its nearest positioned ancestor */
+    flex-direction: column; /* Arrange children in a column */
+    left: 0; /* Align the left edge of the dropdown with the parent */
+    top: 100%; /* Position the top of the dropdown just below the parent */
+    width: 100px; /* Set a fixed width for the dropdown */
+    display: none; /* Initially hide the dropdown */
+    padding: 0; /* Remove default padding */
+    z-index: 20; /* Set a higher stacking order for the dropdown */
+}
+
+.navbar ul .work ul li {
+    z-index: 20; /* Ensure list items have the same stacking order as the parent */
+    background-color: #7cc6e5; /* Set background color */
+    margin-bottom: 2px; /* Add space between items */
+}
+
+.navbar ul .work:hover ul {
+    display: block; /* Show the dropdown when hovering over the parent */
+}
+
+.navbar ul .work ul li:hover {
+    background-color: white; /* Change background color on hover */
+    border-radius: 0; /* Remove border radius */
+}
+
+.form {
+    flex-direction: column; /* Arrange the children of the .form container in a column layout */
+}
+
+.form form {
+    display: flex; /* Use flexbox for the form layout */
+    flex-direction: column; /* Arrange form elements in a column */
+}
+
+.form form fieldset {
+    display: flex; /* Use flexbox for the fieldset layout */
+    flex-direction: column; /* Arrange fieldset elements in a column */
+    width: 50%; /* Set the width of the fieldset to 50% of the container */
+    margin: auto; /* Center the fieldset horizontally */
+    margin-top: 30px; /* Add a margin of 30px to the top */
+    margin-bottom: 10px; /* Add a margin of 10px to the bottom */
+}
+
+.form form fieldset input {
+    margin-bottom: 10px; /* Add a margin of 10px to the bottom of each input element */
+}
+
+.form form fieldset legend {
+    text-align: center; /* Center the legend text */
+    font-size: 1.2rem; /* Set the font size of the legend text to 1.2rem */
+    font-weight: bold; /* Make the legend text bold */
+}
+
+.form form button {
+    width: 200px; /* Set the width of the button to 200px */
+    font-size: 1.2rem; /* Set the font size of the button text to 1.2rem */
+    background-color: #24779b; /* Set the background color of the button */
+    color: white; /* Set the text color of the button to white */
+    margin: auto; /* Center the button horizontally */
+    margin-bottom: 20px; /* Add a margin of 20px to the bottom */
+}
+
+.form form button:hover {
+    font-size: 1.2rem; /* Maintain the font size of the button text on hover */
+    background-color: #91130c; /* Change the background color of the button on hover */
+    color: rgb(248, 243, 243); /* Change the text color of the button on hover */
+}
+
+.math{
+    display: flex;
+}
+
+.math form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 20px;
+    width: 100%;
+
+}
+
+.math form fieldset{
+    display: flex;
+    width: 50%;
+    margin: auto;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.math form fieldset legend{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.math form fieldset .counters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.math form fieldset .counters div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+.math form fieldset .counters div label, input {
+    margin: auto;
+    text-align: center;
+}
+
+.math form fieldset .counters div input {
+    width: 70%;
+    font-size: 1.1rem;
+    color: black;
+}
+
+.math form fieldset .butcont {
+    display: flex;
+    flex: row;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.math form fieldset .butcont button {
+    display: block;
+    width: 20%;
+    box-sizing: border-box;
+    height: 40px;
+    margin: auto;
+}
+
+.math form fieldset p {
+    display: flex;
+    margin: 0;
+}
+
+.math form fieldset p span {
+    margin: auto;
+    font-size: 1.2rem;
+}
 @media (max-width: 700px) {
     /* При ширине экрана до 700px */
     
@@ -271,6 +425,141 @@ footer a {
     }
 }
 
+.burger {
+    display: block; /* Отображение элемента как блочный элемент */
+    position: relative; /* Относительное позиционирование для внутренних элементов */
+    width: 40px; /* Ширина контейнера */
+    height: 40px; /* Высота контейнера */
+    margin: auto; /* Автоматические отступы по бокам для центрирования */
+    margin-left: 20px; /* Отступ слева */
+    margin-right: 5px; /* Отступ справа */
+}
+
+/* Стили для полосок внутри бургер-меню */
+.burger span {
+    position: absolute; /* Абсолютное позиционирование для расположения полосок внутри контейнера */
+    width: 30px; /* Ширина каждой полоски */
+    left: 5px; /* Отступ от левого края контейнера */
+    height: 3px; /* Высота полоски */
+    background-color: black; /* Цвет полоски */
+    bottom: 20px; /* Расположение полоски от нижнего края контейнера */
+}
+
+/* Стили для первой полоски бургер-меню */
+.burger span:nth-child(1) {
+    transform: translateY(-10px); /* Перемещение первой полоски вверх на 10px */
+}
+
+/* Стили для третьей полоски бургер-меню */
+.burger span:nth-child(3) {
+    transform: translateY(10px); /* Перемещение третьей полоски вниз на 10px */
+}
+.navbar ul {
+    position: absolute; /* Абсолютное позиционирование относительно ближайшего позиционированного предка, в нашем случае экрана. */
+    background: radial-gradient(circle at top left, rgb(235, 224, 142), rgb(161, 222, 225), rgb(80, 173, 224)); /* Радужный градиентный фон от верхнего левого угла */
+    flex-direction: column; /* Элементы списка будут выстраиваться вертикально (необходимо для флекс-контейнера) */
+    width: 20%; /* Ширина списка равна 30% от ширины родительского элемента */
+    height: auto; /* Высота автоматически подстраивается под содержимое */
+    top: 107px; /* Расположение списка на 68px ниже от верхнего края родительского элемента */
+    left: -40%; /* Расположение списка на 40% ширины родительского элемента слева (вне видимой области) */
+    z-index: 2; /* Уровень стека элемента, чтобы он перек рывал другие элементы с меньшим z-index */
+}
+
+/* Стили для элементов списка внутри навигационного меню */
+.navbar ul li {
+    margin-top: 10px; /* Отступ сверху для элементов списка */
+}
+
+/* Стили для элемента списка при наведении */
+.navbar ul li:hover {
+    background-color: rgb(169, 51, 51); /* Цвет фона элемента становится черным при наведении */
+    transform: scale(1.07); /* Увеличение размера элемента на 7% при наведении */
+    transition: 0.4s ease; /* Плавный переход эффекта с продолжительностью 0.4 секунды */
+    border-radius: 5%; /* Закругление углов элемента на 5% */
+}
+
+/* Стили для ссылок в элементах списка при наведении */
+.navbar ul li a:hover {
+    color: white; /* Цвет текста ссылки становится белым при наведении */
+}
+
+.navbar ul li:nth-child(1) {
+    margin-top: 20px; /* Увеличение отступа сверху для первого элемента списка */
+}
+
+/* Стили для ссылок внутри элементов списка */
+.navbar ul li a {
+    margin-left: 50; /* Установка нулевого отступа слева для ссылок */
+    font-size: 1.2rem; /* Установка размера шрифта в 1.2rem */
+}
+
+/* Стили для навигационного меню при открытом состоянии */
+/* Menu styles when open */
+.navbar.open ul {
+    transform: translateX(0); /* Ensure it moves into view */
+    left: 77%; /* Ensure the left is correctly set */
+    z-index: 1000; /* Increase z-index to ensure it's on top */
+    transition: 0.0s ease-in-out; /* Smooth transition effect */
+    display: block; /* Ensure it is displayed */
+    visibility: visible; /* Ensure visibility */
+}
+
+
+/* Стили для первой полоски бургер-меню при открытом состоянии */
+.navbar.open .burger span:nth-child(1) {
+    transform: translateY(0) rotate(45deg); /* Поворачивает первую полоску на 45 градусов и возвращает в исходное положение по вертикали */
+}
+
+/* Стили для второй полоски бургер-меню при открытом состоянии */
+.navbar.open .burger span:nth-child(2) {
+    opacity: 0; /* Делает вторую полоску полностью прозрачной (не видимой) */
+}
+
+/* Стили для третьей полоски бургер-меню при открытом состоянии */
+.navbar.open .burger span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg); /* Поворачивает третью полоску на -45 градусов и возвращает в исходное положение по вертикали */
+}
+
+.navbar ul .work ul {
+    position: absolute; /* Position the dropdown menu absolutely relative to its nearest positioned ancestor */
+    flex-direction: column; /* Arrange children in a column */
+    left: 65px; /* Offset the dropdown 10px from the left of the parent */
+    top: 10; /* Align the top of the dropdown with the top of the parent */
+    width: 100px; /* Set a fixed width for the dropdown */
+    display: none; /* Initially hide the dropdown */
+    padding: 0; /* Remove default padding */
+    z-index: 20; /* Set a higher stacking order for the dropdown */
+}
+
+.navbar ul .work ul li {
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 10px; /* Add bottom margin */
+    background-color: unset; /* Remove default background color */
+    font-size: 1.2rem; /* Increase font size */
+    margin-left: 10px; /* Offset the list item 10px from the left */
+    color: black; /* Set text color to black */
+}
+
+.navbar ul .work ul li:hover {
+    background-color: black; /* Change background color to black on hover */
+}
+
+.navbar ul .work ul li:hover a:hover {
+    color: white; /* Change text color to white when hovering over the link */
+}
+
+.navbar ul .work:hover ul li a {
+    color: black; /* Set text color to black when hovering over the parent */
+}
+
+.form form fieldset {
+    width:80%
+}
+
+
+.math form fieldset {
+    width: 70%;
+}
 @media (min-width: 700px) and (max-width: 900px) {
     /* При ширине экрана от 700px до 900px */
     
@@ -282,4 +571,8 @@ footer a {
         height: 200px; /* Высота изображения фиксирована */
         margin: auto; /* Центрирование изображения по горизонтали */
     }
+}
+
+.form form fieldset {
+    width:65%
 }
