@@ -340,6 +340,11 @@ footer a {
     margin: auto;
 }
 
+.butcont button:hover {
+    background-color: #91130c; /* Change background to light red on hover */
+    color: #fff; /* Change text color to white on hover */
+}
+
 .math form fieldset p {
     display: flex;
     margin: 0;
@@ -349,6 +354,7 @@ footer a {
     margin: auto;
     font-size: 1.2rem;
 }
+
 @media (max-width: 700px) {
     /* При ширине экрана до 700px */
     
@@ -497,7 +503,7 @@ footer a {
 /* Menu styles when open */
 .navbar.open ul {
     transform: translateX(0); /* Ensure it moves into view */
-    left: 77%; /* Ensure the left is correctly set */
+    left: 70%; /* Ensure the left is correctly set */
     z-index: 1000; /* Increase z-index to ensure it's on top */
     transition: 0.0s ease-in-out; /* Smooth transition effect */
     display: block; /* Ensure it is displayed */
@@ -523,7 +529,7 @@ footer a {
 .navbar ul .work ul {
     position: absolute; /* Position the dropdown menu absolutely relative to its nearest positioned ancestor */
     flex-direction: column; /* Arrange children in a column */
-    left: 65px; /* Offset the dropdown 10px from the left of the parent */
+    left: -8px; /* Offset the dropdown 10px from the left of the parent */
     top: 10; /* Align the top of the dropdown with the top of the parent */
     width: 100px; /* Set a fixed width for the dropdown */
     display: none; /* Initially hide the dropdown */

@@ -109,3 +109,5 @@ ctgBtn.addEventListener("click", (event) => {
     event.preventDefault();
     trigCalculus("ctg");
 });
+
+val.toFixed(2)
