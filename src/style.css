@@ -342,7 +342,6 @@ footer a {
 
 .butcont button:hover {
     background-color: #91130c; /* Change background to light red on hover */
-    color: #fff; /* Change text color to white on hover */
 }
 
 .math form fieldset p {
@@ -568,8 +567,8 @@ footer a {
 }
 @media (min-width: 700px) and (max-width: 900px) {
     /* При ширине экрана от 700px до 900px */
-    
-    .container img {
+   
+.container img {
         margin-top: 20px; /* Отступ сверху для изображений */
         border-radius: 10%; /* Скругление углов изображений */
         box-shadow: 5px 5px 5px gray; /* Тень для изображений */
