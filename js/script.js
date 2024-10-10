@@ -115,6 +115,3 @@ ctgBtn.addEventListener("click", (event) => {
     event.preventDefault();  // Предотвращаем стандартное поведение
     trigCalculus("ctg");  // Вызываем функцию для ctg()
 });
-
-
-val.toFixed(2)
