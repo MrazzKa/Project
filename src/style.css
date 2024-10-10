@@ -63,7 +63,7 @@
 .container img {
     border-radius: 10%; /* Скругленные углы изображения */
     box-shadow: 10px 10px 5px gray; /* Добавление тени с серым цветом */
-    width: 50%; /* Ширина изображения составляет 50% от ширины родительского элемента */
+    width: 35%; /* Ширина изображения составляет 50% от ширины родительского элемента */
     height: auto; /* Автоматическое подстраивание высоты для сохранения пропорций */
 }
 
@@ -76,7 +76,13 @@
 
 /* Фон для всей страницы */
 body {
-    background-color: #faf7f7; /* Светло-серый фон */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('../src/public/usa.gif'); /* Изменение пути */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Фон для основного содержимого страницы */
@@ -459,6 +465,7 @@ footer a {
 .burger span:nth-child(3) {
     transform: translateY(10px); /* Перемещение третьей полоски вниз на 10px */
 }
+
 .navbar ul {
     position: absolute; /* Абсолютное позиционирование относительно ближайшего позиционированного предка, в нашем случае экрана. */
     background: radial-gradient(circle at top left, rgb(235, 224, 142), rgb(161, 222, 225), rgb(80, 173, 224)); /* Радужный градиентный фон от верхнего левого угла */
