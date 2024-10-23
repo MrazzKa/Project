@@ -5,6 +5,9 @@
     justify-content: space-between; /* Распределяет дочерние элементы .navbar равномерно, 
     с максимальным пространством между ними */
     background-color: #faf7f7; /* Устанавливает фоновый цвет для .navbar */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -12,6 +15,10 @@
     flex-direction: row; /* Располагает элементы списка (li) в строку (по горизонтали) */
     list-style: none; /* Убирает маркеры списка */
     margin: 0; /* Убирает внешний отступ у списка */
+    justify-content: center;
+    flex-grow: 1; 
+    gap: 20px;
+    padding-left: 50px; 
 }
 
 .navbar ul li {
@@ -46,15 +53,20 @@
     border-radius: 20%; /* Скругляет углы div при наведении курсора */
 }
 
+
+
 /* Контейнер с элементами, использующий Flexbox для адаптивного размещения */
 .container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; /* Элементы переносятся на новую строку при нехватке места */
+    text-align: center;
 }
 
 /* Элементы с классами .person и .interests занимают 25% ширины контейнера и центрируются */
 .person, .interests {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
     width: 25%;
     margin: auto;
 }
@@ -79,10 +91,13 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url('../src/public/usa.gif'); /* Изменение пути */
+    background-image: url('../src/public/usa.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
 /* Фон для основного содержимого страницы */
@@ -194,13 +209,14 @@ footer {
     display: flex;
     flex-direction: row; /* Элементы внутри футера располагаются горизонтально */
     justify-content: center; /* Центрирование содержимого футера */
+    background-color: #B00000;
 }
 
 footer a {
     margin-right: 10px; /* Отступ справа у ссылок в футере */
 }
 
-.burger{
+.burger {
     display: none;
 }
 
@@ -360,6 +376,161 @@ footer a {
     font-size: 1.2rem;
 }
 
+.API section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    margin: 20px;
+}
+
+figure {
+    width: 50%;
+    text-align: center;
+    margin: 0;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    display: block;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.API {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.API .Petro {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+.API .Petro img, span {
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.API .Tokyo {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.API .Tokyo img, span {
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.API .Tucson {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.API .Tucson img, span {
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.API .StPetersburg {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.API .StPetersburg img, span {
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.API .Honkong {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.API .Honkong img, span {
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.API .Petro img {
+    border-radius: 8px;
+}
+
+.API .Tucson img {
+    border-radius: 8px;
+}
+
+.API .Tokyo img {
+    border-radius: 8px;
+}
+
+.API .StPetersburg img {
+    border-radius: 8px;
+}
+
+.API .Honkong img {
+    border-radius: 8px;
+}
+
+.API .Petro span {
+    display: inline;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.API .Tucson span {
+    display: inline;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.API .Tokyo span {
+    display: inline;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.API .StPetersburg span {
+    display: inline;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.API .Honkong span {
+    display: inline;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 @media (max-width: 700px) {
     /* При ширине экрана до 700px */
     
@@ -374,6 +545,7 @@ footer a {
         flex-wrap: wrap; /* Перенос элементов на новую строку при необходимости */
         width: 100%; /* Элемент занимает всю ширину контейнера */
         margin: 0; /* Убираем отступы */
+
     }
 
     .person p {
@@ -434,144 +606,156 @@ footer a {
         width: 95%; /* Изображения книг занимают 95% ширины контейнера */
         height: auto; /* Высота автоматически подстраивается под ширину */
     }
+
+    .burger {
+        display: block;
+        position: relative;
+        width: 50px;  /* Increased width for better visibility */
+        height: 50px; /* Increased height */
+        margin: 10px 20px; /* Centering with balanced margins */
+        cursor: pointer; /* Add pointer to indicate it's clickable */
+    }
+    
+    /* Styling for the individual lines (burger bars) */
+    .burger span {
+        position: absolute;
+        width: 40px; /* Longer lines for better visibility */
+        left: 5px;
+        height: 4px; /* Slightly thicker lines */
+        background-color: black;
+        transition: all 0.3s ease; /* Smooth transition for hover/active effects */
+    }
+    
+    /* Positioning the lines for a standard burger appearance */
+    .burger span:nth-child(1) {
+        top: 12px; /* Move the first line down */
+    }
+    .burger span:nth-child(2) {
+        top: 24px; /* Center the second line */
+    }
+    .burger span:nth-child(3) {
+        top: 36px; /* Position the third line at the bottom */
+    }
+    
+    /* Burger transformation when the menu is open */
+    .navbar.open .burger span:nth-child(1) {
+        transform: translateY(12px) rotate(45deg); /* First line rotates to a cross */
+    }
+    .navbar.open .burger span:nth-child(2) {
+        opacity: 0; /* Hide the middle line */
+    }
+    .navbar.open .burger span:nth-child(3) {
+        transform: translateY(-12px) rotate(-45deg); /* Third line rotates to complete the cross */
+    }
+    
+    /* Smooth transition for hover effect */
+    .burger:hover span {
+        background-color: #333; /* Darken the lines slightly on hover */
+        transition: background-color 0.3s ease;
+    }
+    
+    /* Navigation menu (hidden by default, appears when open) */
+    .navbar ul {
+        position: absolute;
+        background: linear-gradient(135deg, #f5d76e, #00538A); /* Updated background with smoother gradient */
+        flex-direction: column;
+        width: 200px; /* Ensure enough width for text */
+        height: auto;
+        top: 60px; /* Positioned just below the burger icon */
+        right: 20px; /* Aligned to the right */
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        border-radius: 10px; /* Rounded corners for a modern look */
+        opacity: 0; /* Initially hidden */
+        visibility: hidden; /* Completely hidden */
+        transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth opening transition */
+    }
+    
+    /* Menu visibility when open */
+    .navbar.open ul {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* List items styling */
+    .navbar ul li {
+        padding: 10px 20px;
+        list-style: none;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8); /* Soft background for items */
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    /* Hover effect for menu items */
+    .navbar ul li:hover {
+        background-color: #3498db; /* Blue background on hover */
+        transform: scale(1.05); /* Slightly enlarge the item */
+    }
+    
+    /* Links inside menu items */
+    .navbar ul li a {
+        color: #333;
+        text-decoration: none;
+        font-size: 1.1rem;
+        display: block;
+    }
+    
+    /* Hover effect for links */
+    .navbar ul li a:hover {
+        color: white;
+    }
+    
+    .form form fieldset {
+        width:80%;
+    }
+    
+    .math form fieldset {
+        width: 70%;
+    }
+    
+    .API .Tokyo {
+        width: 100%;
+    }
+    
+    .API .Petro {
+        width: 100%;
+    }
+    
+    .API .Tucson {
+        width: 100%;
+    }
+    
+    .API .StPetersburg {
+        width: 100%;
+    }
+    
+    .API .Honkong {
+        width: 100%;
+    }
+    
+    .API .Petro span {
+        font-size: 1.05rem;
+    }
+    
+    .API .Tucson span {
+        font-size: 1.05;
+    }
+    
+    .API .Tokyo span {
+        font-size: 1.05rem;
+    }
+    
+    .API .StPetersburg span {
+        font-size: 1.05rem;
+    }
+    
+    .API .Honkong span {
+        font-size: 1.05rem;
+    }
+
 }
 
-.burger {
-    display: block; /* Отображение элемента как блочный элемент */
-    position: relative; /* Относительное позиционирование для внутренних элементов */
-    width: 40px; /* Ширина контейнера */
-    height: 40px; /* Высота контейнера */
-    margin: auto; /* Автоматические отступы по бокам для центрирования */
-    margin-left: 20px; /* Отступ слева */
-    margin-right: 5px; /* Отступ справа */
-}
-
-/* Стили для полосок внутри бургер-меню */
-.burger span {
-    position: absolute; /* Абсолютное позиционирование для расположения полосок внутри контейнера */
-    width: 30px; /* Ширина каждой полоски */
-    left: 5px; /* Отступ от левого края контейнера */
-    height: 3px; /* Высота полоски */
-    background-color: black; /* Цвет полоски */
-    bottom: 20px; /* Расположение полоски от нижнего края контейнера */
-}
-
-/* Стили для первой полоски бургер-меню */
-.burger span:nth-child(1) {
-    transform: translateY(-10px); /* Перемещение первой полоски вверх на 10px */
-}
-
-/* Стили для третьей полоски бургер-меню */
-.burger span:nth-child(3) {
-    transform: translateY(10px); /* Перемещение третьей полоски вниз на 10px */
-}
-
-.navbar ul {
-    position: absolute; /* Абсолютное позиционирование относительно ближайшего позиционированного предка, в нашем случае экрана. */
-    background: radial-gradient(circle at top left, rgb(235, 224, 142), rgb(161, 222, 225), rgb(80, 173, 224)); /* Радужный градиентный фон от верхнего левого угла */
-    flex-direction: column; /* Элементы списка будут выстраиваться вертикально (необходимо для флекс-контейнера) */
-    width: 20%; /* Ширина списка равна 30% от ширины родительского элемента */
-    height: auto; /* Высота автоматически подстраивается под содержимое */
-    top: 107px; /* Расположение списка на 68px ниже от верхнего края родительского элемента */
-    left: -40%; /* Расположение списка на 40% ширины родительского элемента слева (вне видимой области) */
-    z-index: 2; /* Уровень стека элемента, чтобы он перек рывал другие элементы с меньшим z-index */
-}
-
-/* Стили для элементов списка внутри навигационного меню */
-.navbar ul li {
-    margin-top: 10px; /* Отступ сверху для элементов списка */
-}
-
-/* Стили для элемента списка при наведении */
-.navbar ul li:hover {
-    background-color: rgb(169, 51, 51); /* Цвет фона элемента становится черным при наведении */
-    transform: scale(1.07); /* Увеличение размера элемента на 7% при наведении */
-    transition: 0.4s ease; /* Плавный переход эффекта с продолжительностью 0.4 секунды */
-    border-radius: 5%; /* Закругление углов элемента на 5% */
-}
-
-/* Стили для ссылок в элементах списка при наведении */
-.navbar ul li a:hover {
-    color: white; /* Цвет текста ссылки становится белым при наведении */
-}
-
-.navbar ul li:nth-child(1) {
-    margin-top: 20px; /* Увеличение отступа сверху для первого элемента списка */
-}
-
-/* Стили для ссылок внутри элементов списка */
-.navbar ul li a {
-    margin-left: 50; /* Установка нулевого отступа слева для ссылок */
-    font-size: 1.2rem; /* Установка размера шрифта в 1.2rem */
-}
-
-/* Стили для навигационного меню при открытом состоянии */
-/* Menu styles when open */
-.navbar.open ul {
-    transform: translateX(0); /* Ensure it moves into view */
-    left: 70%; /* Ensure the left is correctly set */
-    z-index: 1000; /* Increase z-index to ensure it's on top */
-    transition: 0.0s ease-in-out; /* Smooth transition effect */
-    display: block; /* Ensure it is displayed */
-    visibility: visible; /* Ensure visibility */
-}
-
-
-/* Стили для первой полоски бургер-меню при открытом состоянии */
-.navbar.open .burger span:nth-child(1) {
-    transform: translateY(0) rotate(45deg); /* Поворачивает первую полоску на 45 градусов и возвращает в исходное положение по вертикали */
-}
-
-/* Стили для второй полоски бургер-меню при открытом состоянии */
-.navbar.open .burger span:nth-child(2) {
-    opacity: 0; /* Делает вторую полоску полностью прозрачной (не видимой) */
-}
-
-/* Стили для третьей полоски бургер-меню при открытом состоянии */
-.navbar.open .burger span:nth-child(3) {
-    transform: translateY(0) rotate(-45deg); /* Поворачивает третью полоску на -45 градусов и возвращает в исходное положение по вертикали */
-}
-
-.navbar ul .work ul {
-    position: absolute; /* Position the dropdown menu absolutely relative to its nearest positioned ancestor */
-    flex-direction: column; /* Arrange children in a column */
-    left: -8px; /* Offset the dropdown 10px from the left of the parent */
-    top: 10; /* Align the top of the dropdown with the top of the parent */
-    width: 100px; /* Set a fixed width for the dropdown */
-    display: none; /* Initially hide the dropdown */
-    padding: 0; /* Remove default padding */
-    z-index: 20; /* Set a higher stacking order for the dropdown */
-}
-
-.navbar ul .work ul li {
-    margin-top: 0; /* Remove top margin */
-    margin-bottom: 10px; /* Add bottom margin */
-    background-color: unset; /* Remove default background color */
-    font-size: 1.2rem; /* Increase font size */
-    margin-left: 10px; /* Offset the list item 10px from the left */
-    color: black; /* Set text color to black */
-}
-
-.navbar ul .work ul li:hover {
-    background-color: black; /* Change background color to black on hover */
-}
-
-.navbar ul .work ul li:hover a:hover {
-    color: white; /* Change text color to white when hovering over the link */
-}
-
-.navbar ul .work:hover ul li a {
-    color: black; /* Set text color to black when hovering over the parent */
-}
-
-.form form fieldset {
-    width:80%
-}
-
-
-.math form fieldset {
-    width: 70%;
-}
 @media (min-width: 700px) and (max-width: 900px) {
     /* При ширине экрана от 700px до 900px */
    
@@ -585,6 +769,6 @@ footer a {
     }
 }
 
-.form form fieldset {
-    width:65%
+.form form fieldset{
+    width: 65%;
 }

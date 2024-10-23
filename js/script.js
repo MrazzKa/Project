@@ -57,7 +57,7 @@ div.addEventListener("click", (event) => {
 });
 
 
-// Работа с тригонометрическими функциями
+// Тригонометрияяя
 
 const sinBtn = document.getElementById("sin");  // Получаем кнопку для sin() по её ID
 const cosBtn = document.getElementById("cos");  // Получаем кнопку для cos() по её ID
