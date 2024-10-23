@@ -120,7 +120,6 @@ p:hover {
     background-color: #7cc6e5; /* Синий фон при наведении */
 }
 
-/* Секции внутри контейнера */
 .container section {
     width: 100%; /* Секция занимает всю ширину контейнера */
     margin: auto; /* Центрирование секции */
@@ -131,22 +130,28 @@ p:hover {
     flex-direction: column; /* Контейнер для видео, элементы располагаются вертикально */
 }
 
+/* Общие стили для каждого видео-блока */
 .video1, .video2, .video3 {
     margin-bottom: 20px; /* Отступ снизу для каждого видео-блока */
     flex-direction: column; /* Внутренние элементы располагаются вертикально */
     display: flex; /* Применение Flexbox для управления содержимым */
+    align-items: center; /* Центрирование содержимого по горизонтали */
+    text-align: center; /* Центрирование текста */
 }
 
-.video1 video {
-    margin: auto; /* Центрирование видео по горизонтали */
+/* Центрирование видео и iframe */
+.video1 video, .video2 iframe, .video3 iframe {
+    margin: auto; /* Центрирование видео и iframe по горизонтали */
 }
 
-.video2 iframe {
-    margin: auto; /* Центрирование iframe по горизонтали */
-}
-
-.video3 iframe {
-    margin: auto; /* Центрирование iframe по горизонтали */
+/* Стили для текста под видео */
+.video1 p, .video2 p, .video3 p {
+    margin-top: 10px; /* Отступ сверху для текста */
+    font-size: 1.1rem; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    text-align: center; /* Центрирование текста */
+    width: 100%; /* Текст занимает всю ширину */
+    max-width: 600px; /* Ограничение максимальной ширины текста */
 }
 
 .container-audio {
@@ -174,12 +179,15 @@ p:hover {
 .container-book {
     display: flex;
     flex-direction: column; /* Контейнер для книг, элементы располагаются вертикально */
+    align-items: center;
 }
 
 .book1, .book2, .book3 {
     display: flex;
     flex-direction: column; /* Внутренние элементы располагаются вертикально */
     margin-top: 20px; /* Отступ сверху для каждого книжного блока */
+    align-items: center; /* Центрирование элементов внутри каждого блока */
+    text-align: center; /* Центрирование текста */
 }
 
 .book1 img, .book2 img, .book3 img {
@@ -739,7 +747,7 @@ figcaption {
     }
     
     .API .Tucson span {
-        font-size: 1.05;
+        font-size: 1.05rem;
     }
     
     .API .Tokyo span {
