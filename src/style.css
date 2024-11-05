@@ -10,6 +10,12 @@
     z-index: 1000;
 }
 
+.navbar iframe {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    border: none; /* Removes border around iframe */
+}
+
 .navbar ul {
     display: flex; /* Устанавливает контейнер ul как flex-контейнер для его дочерних элементов (li) */
     flex-direction: row; /* Располагает элементы списка (li) в строку (по горизонтали) */
